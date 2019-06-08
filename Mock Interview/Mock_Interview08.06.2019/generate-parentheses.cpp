@@ -2,30 +2,31 @@
 
 
 class Solution {
-
-private:
-    void generateCombinations(set<string>& s, string pattern, int n, int open, int match) {
-        if (pattern.size() == 2*n) {
-            s.insert(pattern);
-        }
-        else {
-            if (open + match < n )
-                generateCombinations(s, pattern+"(", n, open+1, match);
-            
-            if (open > 0)
-                generateCombinations(s, pattern+")", n, open-1, match+1);                
-        }            
-    }
 public:
-    vector<string> generateParenthesis(int n) {
-        vector<string> sol;
-        set<string> s;
-
-        generateCombinations(s, "(", n, 1, 0);
-       
-        for (auto& word : s)
-            sol.push_back(word);
-
-        return sol;
+    void generate(set<string>& s, int n, string pattern, int currently_open, int already_closed){
+        if(pattern.length()==2*n)
+            s.insert(pattern);
+        else{
+            if(currently_open+already_closed<n)
+                generate(s,n,pattern+'(',currently_open+1,already_closed);
+    
+            if(currently_open>0)
+                generate(s,n,pattern+')',currently_open-1,already_closed+1);
+        }
+        
     }
+    
+    
+    vector<string> generateParenthesis(int n) {
+        vector<string> result;
+        set<string> s;
+        
+        generate(s,n,"(",1,0);
+        for(auto x:s)
+            result.push_back(x);
+        return result;
+        
+    }
+    
+    
 };
