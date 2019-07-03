@@ -1,6 +1,5 @@
 //https://leetcode.com/problems/the-earliest-moment-when-everyone-become-friends/
 
-
 class Solution {
 public:
     int parent[101];
