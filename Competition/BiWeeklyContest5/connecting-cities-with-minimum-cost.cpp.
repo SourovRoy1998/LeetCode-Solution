@@ -1,0 +1,41 @@
+//https://leetcode.com/contest/biweekly-contest-5/problems/connecting-cities-with-minimum-cost/
+
+
+class Solution {
+public:
+    int* parent;
+    
+    static bool comp(vector<int> x, vector<int> y){
+        return x[2]<y[2];
+    }
+    void set_parent(int N){
+        parent=new int[N+1];
+        for(int i=1;i<=N;i++)
+            parent[i]=i;
+    }
+    
+    
+    int find(int i){
+       if(i!=parent[i])
+            parent[i]=find(parent[i]);
+        return parent[i];
+    }
+    
+    int minimumCost(int N, vector<vector<int>>& conections) {
+        sort(conections.begin(),conections.end(),comp);
+        set_parent(N);
+        int result=0,count=1;
+        for(auto x : conections){
+            int p1=find(x[0]),p2=find(x[1]);
+            if(p1!=p2){
+                result+=x[2];
+                parent[p2]=p1;
+                count++;
+                if(count==N) return result;
+            }
+        }
+               
+        return -1;
+    }
+    
+};
