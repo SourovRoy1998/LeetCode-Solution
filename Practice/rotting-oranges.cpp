@@ -36,3 +36,38 @@ public:
         return day;
     } 
 };
+
+
+
+
+//Python3
+/*
+class Solution:
+    def orangesRotting(self, grid: List[List[int]]) -> int:
+        m,n=len(grid),len(grid[0])
+        time, count=0,0
+        Q=collections.deque()
+        direction=[[0,1],[1,0],[0,-1],[-1,0]]
+        
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j]==1:
+                    count+=1
+                elif grid[i][j]==2:
+                    Q.append([i,j,0])
+        if(count==0):
+            return 0
+        
+        while Q:
+            i,j,k=Q.popleft()
+            for dx,dy in direction:
+                if m>i+dx>=0 and n>j+dy>=0 and grid[i+dx][j+dy]==1:
+                    grid[i+dx][j+dy]=2
+                    Q.append([i+dx,j+dy,k+1])
+                    time=k+1
+                    count-=1
+                    if count==0:
+                        return time
+        return -1
+            
+*/
