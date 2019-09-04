@@ -27,3 +27,26 @@ public:
         return answer;
     }
 };
+
+
+/*
+class Solution:
+    def findCircleNum(self, neighbours):
+        def Find(x):
+            if parent[x]!=x:
+                parent[x]=Find(parent[x])
+            return parent[x]
+        def Union(x,y):
+            parent[Find(x)]=Find(y)
+            
+        n,answer=len(neighbours),len(neighbours)
+        parent=[0]*n
+        for i in range(n):
+            parent[i]=i
+        for i in range(n):
+            for j in range(n):
+                if neighbours[i][j]==1 and Find(i)!=Find(j):
+                    Union(i,j)
+                    answer-=1
+        return answer
+*/
