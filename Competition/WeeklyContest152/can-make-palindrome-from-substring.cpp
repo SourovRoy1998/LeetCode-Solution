@@ -28,3 +28,27 @@ public:
         
     }
 };
+
+
+/*
+class Solution:
+    def canMakePaliQueries(self, s, queries):
+        n=len(s)
+        Count=[]
+        curr=[0]*26
+        Count.append(curr.copy())
+        for i in range(n):
+            curr[ord(s[i])-ord("a")]+=1
+            Count.append(curr.copy())
+        result=[]
+        
+        
+        for x in queries:
+            c=0
+            for i in range(26):
+                if (Count[x[1]+1][i]-Count[x[0]][i])%2==1:
+                    c+=1
+            result.append(`c//2)
+        return result
+        
+*/
