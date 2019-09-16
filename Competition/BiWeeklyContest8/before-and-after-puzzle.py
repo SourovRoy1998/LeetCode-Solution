@@ -1,6 +1,5 @@
 ##https://leetcode.com/problems/before-and-after-puzzle/
 
-
 class Solution:
     def beforeAndAfterPuzzles(self, phrases: List[str]) -> List[str]:
         L=[]
