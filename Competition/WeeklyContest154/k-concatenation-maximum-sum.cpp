@@ -17,3 +17,26 @@ class Solution:
         if(max_sum<0): return 0
         return max_sum%1000000007
         
+            
+            
+'''
+class Solution {
+public:
+    int kConcatenationMaxSum(vector<int>& arr, int k) {
+        long result=0, curr=0, sum=0;
+        int mod=1e9+7;
+        for(int i=0;i<arr.size();i++){
+            curr=max(curr+arr[i],(long)arr[i]);
+            result=max(result,curr);
+            sum+=arr[i];
+        }
+        if(k<2) return result%mod;
+        if(sum>0) return (result+sum*(k-1))%mod;
+        for(int i=0;i<arr.size();i++){
+            curr=max(curr+arr[i],(long)arr[i]);
+            result=max(result,curr);
+        }
+        return result%mod;        
+    }
+};
+'''
