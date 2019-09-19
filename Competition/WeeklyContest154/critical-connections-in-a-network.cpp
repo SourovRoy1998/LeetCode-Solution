@@ -1,6 +1,7 @@
 //https://leetcode.com/problems/critical-connections-in-a-network/
 
 
+
     class Solution {
 public:
     void dfs(int node, vector<bool>& visited, vector<int>& disc,vector<int>& low, int parent,int& time,vector<vector<int>>& adj, vector<vector<int>>& result) 
