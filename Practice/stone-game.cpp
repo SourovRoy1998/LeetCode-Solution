@@ -1,6 +1,7 @@
 //https://leetcode.com/problems/stone-game/
 
 //Joke Answer
+
 //return true;
 
 class Solution {
