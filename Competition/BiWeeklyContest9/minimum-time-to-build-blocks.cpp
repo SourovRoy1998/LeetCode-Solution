@@ -15,3 +15,23 @@ public:
         return -pq.top();
     }
 };
+
+
+/*
+class Solution {
+public:
+    int minBuildTime(vector<int>& blocks, int split)
+    {
+        priority_queue<int> queue;
+        for (int b : blocks)
+            queue.push(-b);
+        while (queue.size() > 1) {
+            int t1 = queue.top(); queue.pop();
+            int t2 = queue.top(); queue.pop();
+            int t = std::min(t1, t2) - split;
+            queue.push(t);
+        }
+        return -queue.top();
+    }
+};
+*/
