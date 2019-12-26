@@ -8,3 +8,18 @@ class Solution:
             d[x]+=1
             if d[x]>(len(arr)/4):
                 return x
+            
+            
+ '''
+ for(int i=0;i<n/2;i++){
+            if(first_major==arr[i])
+                first_count++;
+            else
+                first_count--;
+            if(first_count<0){
+                first_count=1;
+                first_major=arr[i];
+            }
+                
+        }
+'''
